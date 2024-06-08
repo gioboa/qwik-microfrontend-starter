@@ -8,7 +8,7 @@
 		"dev": "run-p dev:*",
 		"dev:host": "pnpm --prefix ./host run dev",
 		"dev:remote": "pnpm --prefix ./remote run dev",
-		"preview": "run-p dev:*",
+		"preview": "run-p preview:*",
 		"preview:host": "pnpm --prefix ./host run preview",
 		"preview:remote": "pnpm --prefix ./remote run preview"
 	},
