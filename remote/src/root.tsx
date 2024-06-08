@@ -14,7 +14,7 @@ export default component$(() => {
   return (
     <QwikCityProvider>
       <RouterOutlet />
-      <PrefetchGraph base="remote" />
+      <PrefetchGraph />
     </QwikCityProvider>
   );
 });

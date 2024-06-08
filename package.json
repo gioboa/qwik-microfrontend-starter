@@ -1,0 +1,24 @@
+{
+	"name": "react-microfrontend-demo",
+	"version": "1.0.0",
+	"description": "Vite + Module Federation is now possible",
+	"main": "index.js",
+	"scripts": {
+		"install:deps": "pnpm --prefix ./host install && pnpm --prefix ./remote install",
+		"dev": "run-p dev:*",
+		"dev:host": "pnpm --prefix ./host run dev",
+		"dev:remote": "pnpm --prefix ./remote run dev",
+		"preview": "run-p dev:*",
+		"preview:host": "pnpm --prefix ./host run preview",
+		"preview:remote": "pnpm --prefix ./remote run preview"
+	},
+	"author": {
+		"name": "Giorgio Boa",
+		"email": "giorgiob.boa@gmail.com",
+		"url": "https://github.com/gioboa"
+	},
+	"license": "ISC",
+	"dependencies": {
+		"npm-run-all": "^4.1.5"
+	}
+}
