@@ -1,4 +1,4 @@
-# React host and remote
+# Qwik host and remote
 
 ## Getting started
 
