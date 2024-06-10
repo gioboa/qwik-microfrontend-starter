@@ -9,11 +9,11 @@ importers:
   .:
     devDependencies:
       '@builder.io/qwik':
-        specifier: https://pkg.pr.new/@builder.io/qwik@3cc2e54
-        version: https://pkg.pr.new/@builder.io/qwik@3cc2e54(@types/node@20.14.2)(undici@6.18.2)
+        specifier: https://pkg.pr.new/@builder.io/qwik@7349b37
+        version: https://pkg.pr.new/@builder.io/qwik@7349b37(@types/node@20.14.2)(undici@6.18.2)
       '@builder.io/qwik-city':
-        specifier: https://pkg.pr.new/@builder.io/qwik-city@3cc2e54
-        version: https://pkg.pr.new/@builder.io/qwik-city@3cc2e54(@types/node@20.14.2)(rollup@4.18.0)
+        specifier: https://pkg.pr.new/@builder.io/qwik-city@7349b37
+        version: https://pkg.pr.new/@builder.io/qwik-city@7349b37(@types/node@20.14.2)(rollup@4.18.0)
       '@types/eslint':
         specifier: ^8.56.10
         version: 8.56.10
@@ -50,14 +50,14 @@ importers:
 
 packages:
 
-  '@builder.io/qwik-city@https://pkg.pr.new/@builder.io/qwik-city@3cc2e54':
-    resolution: {tarball: https://pkg.pr.new/@builder.io/qwik-city@3cc2e54}
-    version: 1.5.5-dev20240608223410
+  '@builder.io/qwik-city@https://pkg.pr.new/@builder.io/qwik-city@7349b37':
+    resolution: {tarball: https://pkg.pr.new/@builder.io/qwik-city@7349b37}
+    version: 1.5.6-dev20240610040714
     engines: {node: '>=16.8.0 <18.0.0 || >=18.11'}
 
-  '@builder.io/qwik@https://pkg.pr.new/@builder.io/qwik@3cc2e54':
-    resolution: {tarball: https://pkg.pr.new/@builder.io/qwik@3cc2e54}
-    version: 1.5.5-dev20240608223410
+  '@builder.io/qwik@https://pkg.pr.new/@builder.io/qwik@7349b37':
+    resolution: {tarball: https://pkg.pr.new/@builder.io/qwik@7349b37}
+    version: 1.5.6-dev20240610040714
     engines: {node: '>=16.8.0 <18.0.0 || >=18.11'}
     hasBin: true
     peerDependencies:
@@ -1713,7 +1713,7 @@ packages:
 
 snapshots:
 
-  '@builder.io/qwik-city@https://pkg.pr.new/@builder.io/qwik-city@3cc2e54(@types/node@20.14.2)(rollup@4.18.0)':
+  '@builder.io/qwik-city@https://pkg.pr.new/@builder.io/qwik-city@7349b37(@types/node@20.14.2)(rollup@4.18.0)':
     dependencies:
       '@mdx-js/mdx': 3.0.1
       '@types/mdx': 2.0.13
@@ -1735,7 +1735,7 @@ snapshots:
       - supports-color
       - terser
 
-  '@builder.io/qwik@https://pkg.pr.new/@builder.io/qwik@3cc2e54(@types/node@20.14.2)(undici@6.18.2)':
+  '@builder.io/qwik@https://pkg.pr.new/@builder.io/qwik@7349b37(@types/node@20.14.2)(undici@6.18.2)':
     dependencies:
       csstype: 3.1.3
       undici: 6.18.2

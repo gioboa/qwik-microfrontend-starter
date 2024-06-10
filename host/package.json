@@ -27,8 +27,8 @@
 		"qwik": "qwik"
 	},
 	"devDependencies": {
-		"@builder.io/qwik": "https://pkg.pr.new/@builder.io/qwik@3cc2e54",
-		"@builder.io/qwik-city": "https://pkg.pr.new/@builder.io/qwik-city@3cc2e54",
+		"@builder.io/qwik": "https://pkg.pr.new/@builder.io/qwik@7349b37",
+		"@builder.io/qwik-city": "https://pkg.pr.new/@builder.io/qwik-city@7349b37",
 		"@types/eslint": "^8.56.10",
 		"@types/node": "^20.12.7",
 		"@typescript-eslint/eslint-plugin": "^7.7.1",
