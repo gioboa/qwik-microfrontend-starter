@@ -1,8 +1,4 @@
-import {
-	PrefetchGraph,
-	PrefetchServiceWorker,
-	component$,
-} from '@builder.io/qwik';
+import { PrefetchGraph, PrefetchServiceWorker, component$ } from '@builder.io/qwik';
 import { QwikCityProvider, RouterOutlet } from '@builder.io/qwik-city';
 import { RouterHead } from './components/router-head/router-head';
 
@@ -19,11 +15,11 @@ export default component$(() => {
 	return (
 		<QwikCityProvider>
 			<head>
-				<meta charSet='utf-8' />
-				<link rel='manifest' href='/manifest.json' />
+				<meta charSet="utf-8" />
+				<link rel="manifest" href="/manifest.json" />
 				<RouterHead />
 			</head>
-			<body lang='en'>
+			<body lang="en">
 				<RouterOutlet />
 				<PrefetchGraph />
 				<PrefetchServiceWorker />
