@@ -7,7 +7,6 @@ export const onRequest: RequestHandler = async ({ send, url, request }) => {
   const pathName = url.pathname.replace(`/${remoteName}/`, '');
   const remoteUrl = remotes[remoteName].url;
 
-	console.log('remoteUrl:', remoteUrl, pathName, url.search);
   let response = await fetch(remoteUrl + pathName + url.search, {
     credentials: 'same-origin',
     headers: {
