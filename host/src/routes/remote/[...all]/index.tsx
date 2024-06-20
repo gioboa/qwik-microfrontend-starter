@@ -5,9 +5,7 @@ import { fixRemotePathsInDevMode } from '~/shared';
 export const onRequest: RequestHandler = async ({ send, url, request }) => {
   const remoteName = 'remote';
   const pathName = url.pathname.replace(`/${remoteName}/`, '');
-  const remoteUrl = pathName
-    ? remotes[remoteName].url.replace(`${remoteName}/`, '')
-    : remotes[remoteName].url;
+  const remoteUrl = remotes[remoteName].url;
 
   let response = await fetch(remoteUrl + pathName + url.search, {
     credentials: 'same-origin',
