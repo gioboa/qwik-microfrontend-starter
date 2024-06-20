@@ -53,7 +53,10 @@ export default component$(() => {
 				</div>
 			</div>
 
-			<RemoteMfe remote={remotes.remote} removeLoader={true} />
+			<div>
+				I am a remote component:
+				<RemoteMfe remote={remotes.remote} removeLoader={true} />
+			</div>
 		</>
 	);
 });
