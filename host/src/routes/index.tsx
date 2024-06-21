@@ -53,9 +53,10 @@ export default component$(() => {
 				</div>
 			</div>
 
-			<div>
-				I am a remote component:
-				<RemoteMfe remote={remotes.remote} removeLoader={true} />
+			<div id="my-child" q:shadowRoot>
+				<template shadowRootMode="open">
+					<RemoteMfe remote={remotes.remote} removeLoader={true} />
+				</template>
 			</div>
 		</>
 	);
