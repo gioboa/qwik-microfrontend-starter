@@ -9,11 +9,11 @@ importers:
   .:
     devDependencies:
       '@builder.io/qwik':
-        specifier: https://pkg.pr.new/@builder.io/qwik@f034cb7
-        version: https://pkg.pr.new/@builder.io/qwik@f034cb7(@types/node@20.14.2)(undici@6.18.2)
+        specifier: 1.6.0
+        version: 1.6.0(@types/node@20.14.2)(undici@6.18.2)
       '@builder.io/qwik-city':
-        specifier: https://pkg.pr.new/@builder.io/qwik-city@f034cb7
-        version: https://pkg.pr.new/@builder.io/qwik-city@f034cb7(@types/node@20.14.2)(rollup@4.18.0)
+        specifier: 1.6.0
+        version: 1.6.0(@types/node@20.14.2)(rollup@4.18.0)
       '@types/eslint':
         specifier: ^8.56.10
         version: 8.56.10
@@ -50,14 +50,12 @@ importers:
 
 packages:
 
-  '@builder.io/qwik-city@https://pkg.pr.new/@builder.io/qwik-city@f034cb7':
-    resolution: {tarball: https://pkg.pr.new/@builder.io/qwik-city@f034cb7}
-    version: 1.5.7-dev20240621090019
+  '@builder.io/qwik-city@1.6.0':
+    resolution: {integrity: sha512-XulIdmrPkdIA8yatRolyWtyVsmKB/CsamOb3loOaLc4ptHt5NMJiGCiS9axlyaqpAuy2LjZqb7S0ATACkjeK5w==}
     engines: {node: '>=16.8.0 <18.0.0 || >=18.11'}
 
-  '@builder.io/qwik@https://pkg.pr.new/@builder.io/qwik@f034cb7':
-    resolution: {tarball: https://pkg.pr.new/@builder.io/qwik@f034cb7}
-    version: 1.5.7-dev20240621090019
+  '@builder.io/qwik@1.6.0':
+    resolution: {integrity: sha512-IaVLxK+hK2qzi1hMTl2M48f5I49OE//UQeNQo6Kil+Mu+/Ov2N5oMTwq8UFKpk9ZnurKQmWRc5CKwtM04js9tg==}
     engines: {node: '>=16.8.0 <18.0.0 || >=18.11'}
     hasBin: true
     peerDependencies:
@@ -1713,7 +1711,7 @@ packages:
 
 snapshots:
 
-  '@builder.io/qwik-city@https://pkg.pr.new/@builder.io/qwik-city@f034cb7(@types/node@20.14.2)(rollup@4.18.0)':
+  '@builder.io/qwik-city@1.6.0(@types/node@20.14.2)(rollup@4.18.0)':
     dependencies:
       '@mdx-js/mdx': 3.0.1
       '@types/mdx': 2.0.13
@@ -1735,7 +1733,7 @@ snapshots:
       - supports-color
       - terser
 
-  '@builder.io/qwik@https://pkg.pr.new/@builder.io/qwik@f034cb7(@types/node@20.14.2)(undici@6.18.2)':
+  '@builder.io/qwik@1.6.0(@types/node@20.14.2)(undici@6.18.2)':
     dependencies:
       csstype: 3.1.3
       undici: 6.18.2
