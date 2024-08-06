@@ -9,11 +9,11 @@ importers:
   .:
     devDependencies:
       '@builder.io/qwik':
-        specifier: 1.6.0
-        version: 1.6.0(@types/node@20.14.2)(undici@6.18.2)
+        specifier: 1.7.3
+        version: 1.7.3(@types/node@20.14.2)
       '@builder.io/qwik-city':
-        specifier: 1.6.0
-        version: 1.6.0(@types/node@20.14.2)(rollup@4.18.0)
+        specifier: 1.7.3
+        version: 1.7.3(@types/node@20.14.2)(rollup@4.18.0)
       '@types/eslint':
         specifier: ^8.56.10
         version: 8.56.10
@@ -50,16 +50,14 @@ importers:
 
 packages:
 
-  '@builder.io/qwik-city@1.6.0':
-    resolution: {integrity: sha512-XulIdmrPkdIA8yatRolyWtyVsmKB/CsamOb3loOaLc4ptHt5NMJiGCiS9axlyaqpAuy2LjZqb7S0ATACkjeK5w==}
+  '@builder.io/qwik-city@1.7.3':
+    resolution: {integrity: sha512-ZCD8HQ4AmSaBCENaDeFDh3h5drxjUi44miEUSnBf73gSACDSChq70LaM+Y2wwoaArDT6OQ3YzuN/lzFpFWynQg==}
     engines: {node: '>=16.8.0 <18.0.0 || >=18.11'}
 
-  '@builder.io/qwik@1.6.0':
-    resolution: {integrity: sha512-IaVLxK+hK2qzi1hMTl2M48f5I49OE//UQeNQo6Kil+Mu+/Ov2N5oMTwq8UFKpk9ZnurKQmWRc5CKwtM04js9tg==}
+  '@builder.io/qwik@1.7.3':
+    resolution: {integrity: sha512-lVRT4j9redY4X+iOy26U2vhychJgX24aaleu3IuBlEwD8MjCU5k46ApHq+cGqI24/kbqjirPH3SIxtVSByEG/A==}
     engines: {node: '>=16.8.0 <18.0.0 || >=18.11'}
     hasBin: true
-    peerDependencies:
-      undici: '*'
 
   '@emnapi/runtime@1.2.0':
     resolution: {integrity: sha512-bV21/9LQmcQeCPEg3BDFtvwL6cwiTMksYNWQQ4KOxCZikEGalWtenoZ0wCiukJINlGCIi2KXx01g4FoH/LxpzQ==}
@@ -1711,7 +1709,7 @@ packages:
 
 snapshots:
 
-  '@builder.io/qwik-city@1.6.0(@types/node@20.14.2)(rollup@4.18.0)':
+  '@builder.io/qwik-city@1.7.3(@types/node@20.14.2)(rollup@4.18.0)':
     dependencies:
       '@mdx-js/mdx': 3.0.1
       '@types/mdx': 2.0.13
@@ -1733,10 +1731,9 @@ snapshots:
       - supports-color
       - terser
 
-  '@builder.io/qwik@1.6.0(@types/node@20.14.2)(undici@6.18.2)':
+  '@builder.io/qwik@1.7.3(@types/node@20.14.2)':
     dependencies:
       csstype: 3.1.3
-      undici: 6.18.2
       vite: 5.2.12(@types/node@20.14.2)
     transitivePeerDependencies:
       - '@types/node'
