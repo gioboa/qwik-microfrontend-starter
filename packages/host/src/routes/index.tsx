@@ -1,4 +1,4 @@
-import { component$, useSignal } from '@builder.io/qwik';
+import { $, component$, useOnDocument, useSignal } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
 import RemoteMfe from '~/components/RemoteMfe';
 
@@ -13,6 +13,14 @@ export const remotes: Record<string, RemoteData> = {
 
 export default component$(() => {
 	const counterSig = useSignal(0);
+
+  useOnDocument(
+    'APP_VALUE_CHANGED_EVENT',
+    $((event: CustomEvent<CustomEvent>) => {
+      counterSig.value += (event as CustomEvent).detail.qty;
+    })
+  );
+	
 	return (
 		<>
 			<div class="host">

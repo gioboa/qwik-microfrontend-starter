@@ -63,3 +63,16 @@ The production build will generate client and server modules by running both cli
 ```shell
 pnpm build # or `pnpm build`
 ```
+
+
+
+---
+
+```shell
+pnpm i
+```
+
+start all
+```shell
+pnpm --filter host --filter remote dev
+```
