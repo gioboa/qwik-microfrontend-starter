@@ -1,6 +1,6 @@
 import { component$, useSignal } from '@builder.io/qwik';
-import { Counter } from '~/components/Counter';
-import { Detail } from '~/components/Detail';
+import { Counter } from '../components/Counter';
+import { Detail } from '../components/Detail';
 
 export default component$(() => {
 	const showDetailSig = useSignal(false);

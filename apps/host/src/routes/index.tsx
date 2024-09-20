@@ -1,6 +1,6 @@
 import { $, component$, useOnDocument, useSignal } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
-import RemoteMfe from '~/components/RemoteMfe';
+import RemoteMfe from '../components/RemoteMfe';
 
 export interface RemoteData {
 	name: string;

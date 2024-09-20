@@ -5,7 +5,7 @@ export const Counter = component$(() => {
 	const addCart = $(() => {
     document.dispatchEvent(
       new CustomEvent('APP_VALUE_CHANGED_EVENT', {
-        detail: { qty: 50 },
+        detail: { qty: 10 },
       })
     );
   });
