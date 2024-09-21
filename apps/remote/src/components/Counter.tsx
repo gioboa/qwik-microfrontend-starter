@@ -1,7 +1,15 @@
-import { component$, useSignal } from '@builder.io/qwik';
+import { $, component$, useSignal } from '@builder.io/qwik';
 
 export const Counter = component$(() => {
 	const counterSig = useSignal(0);
+	const addCart = $(() => {
+    document.dispatchEvent(
+      new CustomEvent('APP_VALUE_CHANGED_EVENT', {
+        detail: { qty: 10 },
+      })
+    );
+  });
+
 	return (
 		<button
 			style={{
@@ -15,6 +23,7 @@ export const Counter = component$(() => {
 			}}
 			onClick$={() => {
 				counterSig.value++;
+				addCart();
 			}}
 		>
 			Remote counter: {counterSig.value}

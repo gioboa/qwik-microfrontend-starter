@@ -1,9 +1,10 @@
 import { component$, useSignal } from '@builder.io/qwik';
-import { Counter } from '~/components/Counter';
-import { Detail } from '~/components/Detail';
+import { Counter } from '../components/Counter';
+import { Detail } from '../components/Detail';
 
 export default component$(() => {
 	const showDetailSig = useSignal(false);
+
 	return (
 		<>
 			<div
@@ -49,7 +50,9 @@ export default component$(() => {
 					padding: '.5rem 1rem .5rem 1rem',
 					color: 'rgb(24, 24, 24)',
 				}}
-				onClick$={() => (showDetailSig.value = !showDetailSig.value)}
+				onClick$={() => (
+					showDetailSig.value = !showDetailSig.value
+				)}
 			>
 				Toggle Detail
 			</button>
