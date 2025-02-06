@@ -1,18 +1,24 @@
-import { $, component$, useOnDocument, useSignal } from '@builder.io/qwik';
+import { $, component$, useOnDocument, useStore } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
-import { RemoteMfe, type RemoteData } from '@qwik-microfrontend-starter/shared';
+import { Counter, RemoteMfe, type RemoteData } from '@qwik-microfrontend-starter/shared';
+import type { CounterStore } from '@qwik-microfrontend-starter/shared/components/Counter/Counter.type';
 
 export const remotes: Record<string, RemoteData> = {
 	remote: { name: 'remote', url: 'http://localhost:4174/remote/' },
 };
 
 export default component$(() => {
-	const counterSig = useSignal(0);
+	const counterState = useStore<CounterStore>({
+		counter: 0,
+		increment: $(function (this: CounterStore) {
+			this.counter++;
+		}),
+	});
 
 	useOnDocument(
 		'APP_VALUE_CHANGED_EVENT',
 		$((event: CustomEvent<CustomEvent>) => {
-			counterSig.value += (event as CustomEvent).detail.qty;
+			counterState.counter += (event as CustomEvent).detail.qty;
 		}),
 	);
 
@@ -37,30 +43,11 @@ export default component$(() => {
 						</svg>
 					</div>
 					<div class="title">I'm the host app</div>
-					<button
-						style={{
-							border: '0 solid #e2e8f0',
-							marginTop: '10px',
-							backgroundColor: 'rgb(246, 179, 82)',
-							borderRadius: '.25rem',
-							fontWeight: '700',
-							padding: '.5rem 1rem .5rem 1rem',
-							color: 'rgb(24, 24, 24)',
-						}}
-						onClick$={() => {
-							counterSig.value++;
-						}}
-					>
-						Host counter: {counterSig.value}
-					</button>
+					<Counter label="Host counter:" state={counterState} />
 				</div>
 			</div>
 
-			<div id="my-child" q:shadowRoot>
-				<template shadowRootMode="open">
-					<RemoteMfe remote={remotes.remote} removeLoader={true} />
-				</template>
-			</div>
+			<RemoteMfe remote={remotes.remote} />
 		</>
 	);
 });

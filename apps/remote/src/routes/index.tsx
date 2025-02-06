@@ -1,9 +1,24 @@
-import { component$, useSignal } from '@builder.io/qwik';
-import { Counter } from '../components/Counter';
+import { $, component$, useSignal, useStore, type QRL } from '@builder.io/qwik';
+import Counter from '@qwik-microfrontend-starter/shared/components/Counter/Counter';
+import type { CounterStore } from '@qwik-microfrontend-starter/shared/components/Counter/Counter.type';
 import { Detail } from '../components/Detail';
 
 export default component$(() => {
 	const showDetailSig = useSignal(false);
+	const toggleDetail = $(() => (showDetailSig.value = !showDetailSig.value));
+	const state = useStore<CounterStore>({
+		counter: 0,
+		increment: $(function (this: CounterStore) {
+			this.counter++;
+		}),
+	});
+	const addCart = $(() => {
+		document.dispatchEvent(
+			new CustomEvent('APP_VALUE_CHANGED_EVENT', {
+				detail: { qty: 10 },
+			}),
+		);
+	});
 
 	return (
 		<>
@@ -37,22 +52,20 @@ export default component$(() => {
 					</svg>
 				</div>
 				<div style={{ marginTop: '10px', fontSize: '25px' }}>I'm the remote app</div>
-				<Counter />
+				<Counter label="Remote counter:" onClick$={addCart} state={state} />
 			</div>
 
 			<button
 				style={{
 					border: '0 solid #e2e8f0',
-					marginTop: '10px',
+					marginTop: '20px',
 					backgroundColor: 'rgb(246, 179, 82)',
 					borderRadius: '.25rem',
 					fontWeight: '700',
 					padding: '.5rem 1rem .5rem 1rem',
 					color: 'rgb(24, 24, 24)',
 				}}
-				onClick$={() => (
-					showDetailSig.value = !showDetailSig.value
-				)}
+				onClick$={toggleDetail}
 			>
 				Toggle Detail
 			</button>

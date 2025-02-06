@@ -75,7 +75,11 @@ importers:
         specifier: workspace:^1.0.0
         version: link:../../packages/shared
 
-  apps/remote: {}
+  apps/remote:
+    devDependencies:
+      '@qwik-microfrontend-starter/shared':
+        specifier: workspace:^1.0.0
+        version: link:../../packages/shared
 
   packages/shared: {}
 
