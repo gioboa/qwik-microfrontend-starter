@@ -1,7 +1,7 @@
 import type { StreamWriter } from '@builder.io/qwik';
 import { component$, SSRStream, SSRStreamBlock } from '@builder.io/qwik';
-import type { RemoteData } from '../routes';
-import { fixRemotePathsInDevMode } from '../shared';
+import { fixRemotePathsInDevMode } from '..';
+import type { RemoteData } from './RemoteMfe.types';
 
 export interface Props {
 	remote: RemoteData;

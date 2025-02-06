@@ -1,6 +1,7 @@
 {
-	"name": "host",
-	"description": "App with Routing built-in ready to create your app",
+	"name": "@qwik-microfrontend-starter/shared",
+	"version": "1.0.0",
+	"description": "Shared package",
 	"engines": {
 		"node": "^18.17.0 || ^20.3.0 || >=21.0.0"
 	},
@@ -17,16 +18,10 @@
 		"build.preview": "vite build --ssr src/entry.preview.tsx",
 		"build.types": "tsc --incremental --noEmit",
 		"deploy": "echo 'Run \"npm run qwik add\" to install a server adapter'",
-		"dev": "vite --mode ssr --port 4173",
-		"dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
 		"fmt": "prettier --write .",
 		"fmt.check": "prettier --check .",
 		"lint": "eslint \"src/**/*.ts*\"",
 		"preview": "qwik build preview && vite preview --open --port 4173",
-		"start": "vite --open --mode ssr",
 		"qwik": "qwik"
-	},
-	"devDependencies": {
-		"@qwik-microfrontend-starter/shared": "workspace:^1.0.0"
 	}
 }

@@ -1,11 +1,6 @@
 import { $, component$, useOnDocument, useSignal } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
-import RemoteMfe from '../components/RemoteMfe';
-
-export interface RemoteData {
-	name: string;
-	url: string;
-}
+import { RemoteMfe, type RemoteData } from '@qwik-microfrontend-starter/shared';
 
 export const remotes: Record<string, RemoteData> = {
 	remote: { name: 'remote', url: 'http://localhost:4174/remote/' },
@@ -14,13 +9,13 @@ export const remotes: Record<string, RemoteData> = {
 export default component$(() => {
 	const counterSig = useSignal(0);
 
-  useOnDocument(
-    'APP_VALUE_CHANGED_EVENT',
-    $((event: CustomEvent<CustomEvent>) => {
-      counterSig.value += (event as CustomEvent).detail.qty;
-    })
-  );
-	
+	useOnDocument(
+		'APP_VALUE_CHANGED_EVENT',
+		$((event: CustomEvent<CustomEvent>) => {
+			counterSig.value += (event as CustomEvent).detail.qty;
+		}),
+	);
+
 	return (
 		<>
 			<div class="host">

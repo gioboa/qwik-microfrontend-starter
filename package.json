@@ -4,8 +4,8 @@
 	"description": "Vite + Module Federation is now possible",
 	"main": "index.js",
 	"scripts": {
-		"dev": "pnpm -r dev",
-		"preview": "pnpm -r preview",
+		"dev": "pnpm --filter './apps/*' dev",
+		"preview": "pnpm --filter './apps/*' preview",
 		"lint": "pnpm -r lint"
 	},
 	"author": {

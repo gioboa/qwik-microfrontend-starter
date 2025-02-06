@@ -69,13 +69,15 @@ importers:
         specifier: ^5.0.1
         version: 5.0.1(typescript@5.6.2)(vite@5.4.6(@types/node@20.16.5))
 
-  apps/host: {}
-
-  apps/host/server: {}
+  apps/host:
+    devDependencies:
+      '@qwik-microfrontend-starter/shared':
+        specifier: workspace:^1.0.0
+        version: link:../../packages/shared
 
   apps/remote: {}
 
-  apps/remote/server: {}
+  packages/shared: {}
 
 packages:
 
@@ -931,6 +933,7 @@ packages:
   eslint@8.57.1:
     resolution: {integrity: sha512-ypowyDxpVSYpkXr9WPv2PAZCtNip1Mv5KTW0SCurXv/9iOpcrH9PaqUElksqEB6pChqHGDRCFTyrZlGhnLNGiA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   espree@9.6.1:
