@@ -1,6 +1,7 @@
-import { $, component$, useSignal, useStore, type QRL } from '@builder.io/qwik';
+import { $, component$, useSignal, useStore } from '@builder.io/qwik';
 import Counter from '@qwik-microfrontend-starter/shared/components/Counter/Counter';
-import type { CounterStore } from '@qwik-microfrontend-starter/shared/components/Counter/Counter.type';
+import type { CounterStore } from '@qwik-microfrontend-starter/shared/components/Counter/Counter.types';
+import { dispatchEvent } from '@qwik-microfrontend-starter/shared/events';
 import { Detail } from '../components/Detail';
 
 export default component$(() => {
@@ -12,13 +13,7 @@ export default component$(() => {
 			this.counter++;
 		}),
 	});
-	const addCart = $(() => {
-		document.dispatchEvent(
-			new CustomEvent('APP_VALUE_CHANGED_EVENT', {
-				detail: { qty: 10 },
-			}),
-		);
-	});
+	const addCart = $(() => dispatchEvent('APP_VALUE_CHANGED_EVENT', 10));
 
 	return (
 		<>

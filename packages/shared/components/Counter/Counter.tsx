@@ -1,5 +1,5 @@
 import { component$ } from '@builder.io/qwik';
-import type { CounterProps } from './Counter.type';
+import type { CounterProps } from './Counter.types';
 
 export default component$(({ label, onClick$, state }: CounterProps) => {
 	return (

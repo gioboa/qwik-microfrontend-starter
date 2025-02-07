@@ -1,7 +1,9 @@
 import { $, component$, useOnDocument, useStore } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
-import { Counter, RemoteMfe, type RemoteData } from '@qwik-microfrontend-starter/shared';
-import type { CounterStore } from '@qwik-microfrontend-starter/shared/components/Counter/Counter.type';
+import Counter from '@qwik-microfrontend-starter/shared/components/Counter/Counter';
+import type { CounterStore } from '@qwik-microfrontend-starter/shared/components/Counter/Counter.types';
+import RemoteMfe from '@qwik-microfrontend-starter/shared/components/RemoteMfe/RemoteMfe';
+import { type RemoteData } from '@qwik-microfrontend-starter/shared/components/RemoteMfe/RemoteMfe.types';
 
 export const remotes: Record<string, RemoteData> = {
 	remote: { name: 'remote', url: 'http://localhost:4174/remote/' },
