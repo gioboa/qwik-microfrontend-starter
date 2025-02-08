@@ -9,6 +9,10 @@ pnpm install
 ```
 
 ```shell
+pnpm build.lib
+```
+
+```shell
 pnpm dev
 ```
 

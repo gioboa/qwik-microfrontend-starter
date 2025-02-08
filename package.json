@@ -6,7 +6,8 @@
 	"scripts": {
 		"dev": "pnpm --filter './apps/*' dev",
 		"preview": "pnpm --filter './apps/*' preview",
-		"lint": "pnpm --filter './apps/*' --filter './packages/*' lint"
+		"lint": "pnpm --filter './apps/*' --filter './packages/*' lint",
+		"build.lib": "pnpm --filter './packages/*' build"
 	},
 	"author": {
 		"name": "Giorgio Boa",
