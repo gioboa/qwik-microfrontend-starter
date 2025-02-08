@@ -1,22 +1,22 @@
 import type { StreamWriter } from '@builder.io/qwik';
 import { component$, SSRStream, SSRStreamBlock } from '@builder.io/qwik';
 import { fixRemotePathsInDevMode } from '../utils';
-import type { Props } from './RemoteMfe.types';
+import type { FetchError, Props } from './RemoteMfe.types';
 
-const handleFetchError = (error: Error) => {
+const handleFetchError = (error: FetchError) => {
 	// see https://web.dev/articles/fetch-api-error-handling
 
 	// Failed to fetch
-	if (error instanceof TypeError && error.cause?.code === 'ECONNREFUSED') {
-		console.error('RemoteMfe unavailable at address 0:', error.cause.errors[0].address, error.cause.errors[0].port); // IPv6
+	if (error instanceof TypeError && error.cause.code === 'ECONNREFUSED') {
+		console.error('RemoteMfe is not available at address 0:', error.cause.errors[0].address, error.cause.errors[0].port); // IPv6
 
 		if (error.cause.errors[1]) {
-			console.error('RemoteMfe unavailable at address 1:', error.cause.errors[1].address, error.cause.errors[1].port); // IPv4
+			console.error('RemoteMfe is not available at address 1:', error.cause.errors[1].address, error.cause.errors[1].port); // IPv4
 		}
 	}
 };
 
-export default component$(({ remote, removeLoader = true }: Props) => {
+export default component$(({ remote, removeLoader = true, ...rest }: Props) => {
 	const url = remote.url;
 	const decoder = new TextDecoder();
 	const getSSRStreamFunction = (remoteUrl: string) => async (stream: StreamWriter) => {
@@ -50,7 +50,7 @@ export default component$(({ remote, removeLoader = true }: Props) => {
 	};
 
 	return (
-		<div data-testid="remote-mfe" q:shadowRoot>
+		<div {...rest} q:shadowRoot>
 			<template shadowRootMode="open">
 				<SSRStreamBlock>
 					<SSRStream>{getSSRStreamFunction(url)}</SSRStream>

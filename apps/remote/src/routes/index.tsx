@@ -1,7 +1,6 @@
 import { $, component$, useSignal, useStore } from '@builder.io/qwik';
-import Counter from '@qwik-microfrontend-starter/shared/components/Counter/Counter';
-import type { CounterStore } from '@qwik-microfrontend-starter/shared/components/Counter/Counter.types';
-import { dispatchEvent } from '@qwik-microfrontend-starter/shared/events';
+import { dispatchEvent } from '@qwik-microfrontend/mfe';
+import { Counter, type CounterStore } from '@qwik-microfrontend/ui';
 import { Detail } from '../components/Detail';
 
 export default component$(() => {

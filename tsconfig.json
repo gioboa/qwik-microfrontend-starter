@@ -29,9 +29,8 @@
     "rootDir": "."
   },
   "include": [
-    "apps/host",
-    "apps/remote",
-    "packages/shared",
+    "apps/**/*",
+    "packages/**/*",
     "@types/deno.d.ts",
     "@types/bun.d.ts",
     "types.d.ts"

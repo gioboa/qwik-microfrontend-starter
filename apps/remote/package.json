@@ -27,6 +27,7 @@
 		"qwik": "qwik"
 	},
 	"devDependencies": {
-		"@qwik-microfrontend-starter/shared": "workspace:^1.0.0"
+		"@qwik-microfrontend/mfe": "workspace:^1.0.0",
+		"@qwik-microfrontend/ui": "workspace:^1.0.0"
 	}
 }

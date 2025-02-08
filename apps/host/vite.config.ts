@@ -2,15 +2,12 @@
  * This is the base config for vite.
  * When building, the adapter config is used which loads this file and extends it.
  */
-import { defineConfig, type UserConfig } from "vite";
-import { qwikVite } from "@builder.io/qwik/optimizer";
 import { qwikCity } from "@builder.io/qwik-city/vite";
+import { qwikVite } from "@builder.io/qwik/optimizer";
+import { defineConfig, type UserConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import pkg from "./package.json";
-
-const remotes = {
-	remote: { name: 'remote', url: 'http://localhost:4174/remote/' },
-};
+import remotes from "./remotes.json";
 
 type PkgDep = Record<string, string>;
 const { dependencies = {}, devDependencies = {} } = pkg as any as {
@@ -24,6 +21,15 @@ errorOnDuplicatesPkgDeps(devDependencies, dependencies);
  * Note that Vite normally starts from `index.html` but the qwikCity plugin makes start at `src/entry.ssr.tsx` instead.
  */
 export default defineConfig(({ command, mode }): UserConfig => {
+	const proxy = Object.keys(remotes).reduce(
+		(prev, id) => ({
+		...prev,
+		[`/${id}/`]: {
+			target: remotes[id].url.replace(`/${id}/`, ''),
+			changeOrigin: true,
+		}
+	}), {});
+
 	return {
 		plugins: [qwikCity(), qwikVite(), tsconfigPaths()],
 		// This tells Vite which dependencies to pre-build in dev mode.
@@ -51,12 +57,7 @@ export default defineConfig(({ command, mode }): UserConfig => {
 				: undefined,
 
 		server: {
-			proxy: {
-				'/remote/': {
-					target: remotes.remote.url.replace('/remote/', ''),
-					changeOrigin: true,
-				},
-			},
+			proxy,
 			headers: {
 				// Don't cache the server response in dev mode
 				'Cache-Control': 'public, max-age=0',

@@ -15,7 +15,9 @@ export default component$(({ label, onClick$, state }: CounterProps) => {
 			}}
 			onClick$={() => {
 				state.increment();
-				onClick$ && onClick$();
+				if (onClick$) {
+					onClick$();
+				}
 			}}
 		>
 			{label} {state.counter}
