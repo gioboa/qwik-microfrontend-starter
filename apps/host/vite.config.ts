@@ -21,11 +21,12 @@ errorOnDuplicatesPkgDeps(devDependencies, dependencies);
  * Note that Vite normally starts from `index.html` but the qwikCity plugin makes start at `src/entry.ssr.tsx` instead.
  */
 export default defineConfig(({ command, mode }): UserConfig => {
+	const remotesRecord: Record<string, { url: string }> = remotes;
 	const proxy = Object.keys(remotes).reduce(
 		(prev, id) => ({
 		...prev,
 		[`/${id}/`]: {
-			target: remotes[id].url.replace(`/${id}/`, ''),
+			target: remotesRecord[id].url.replace(`/${id}/`, ''),
 			changeOrigin: true,
 		}
 	}), {});
