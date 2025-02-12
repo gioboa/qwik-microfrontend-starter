@@ -72,10 +72,10 @@ importers:
   apps/host:
     devDependencies:
       '@qwik-microfrontend/mfe':
-        specifier: workspace:^1.0.0
+        specifier: workspace:^
         version: link:../../packages/mfe
       '@qwik-microfrontend/ui':
-        specifier: workspace:^1.0.0
+        specifier: workspace:^
         version: link:../../packages/ui
 
   apps/remote:
