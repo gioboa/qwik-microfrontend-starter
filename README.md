@@ -9,7 +9,7 @@ pnpm install
 ```
 
 ```shell
-pnpm build.lib
+pnpm build.packages
 ```
 
 ```shell
