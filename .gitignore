@@ -23,3 +23,5 @@ dist-dev
 *.njsproj
 *.sln
 *.sw?
+
+tsconfig.tsbuildinfo

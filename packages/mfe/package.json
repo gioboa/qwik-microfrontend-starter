@@ -1,0 +1,41 @@
+{
+	"name": "@qwik-microfrontend/mfe",
+	"version": "1.0.0",
+	"description": "Shared MFE package",
+	"main": "./lib/index.qwik.mjs",
+  "qwik": "./lib/index.qwik.mjs",
+  "types": "./lib-types/index.d.ts",
+	"exports": {
+    ".": {
+      "import": "./lib/index.qwik.mjs",
+      "require": "./lib/index.qwik.cjs",
+      "types": "./lib-types/index.d.ts"
+    }
+  },
+	"files": [
+    "lib",
+    "lib-types"
+  ],
+	"engines": {
+		"node": "^18.17.0 || ^20.3.0 || >=21.0.0"
+	},
+	"engines-annotation": "Mostly required by sharp which needs a Node-API v9 compatible runtime",
+	"private": true,
+	"trustedDependencies": [
+		"sharp"
+	],
+	"trustedDependencies-annotation": "Needed for bun to allow running install scripts",
+	"type": "module",
+	"scripts": {
+		"build": "pnpm build.lib && pnpm build.types",
+    "build.lib": "vite build --mode lib",
+		"build.client": "vite build",
+    "build.types": "tsc --emitDeclarationOnly",
+		"deploy": "echo 'Run \"npm run qwik add\" to install a server adapter'",
+		"fmt": "prettier --write .",
+		"fmt.check": "prettier --check .",
+		"lint": "eslint \"src/**/*.ts*\"",
+		"qwik": "qwik",
+    "test": "echo \"No test specified\" && exit 0"
+	}
+}

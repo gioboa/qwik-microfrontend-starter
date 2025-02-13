@@ -5,5 +5,5 @@ export const Detail = component$(() => {
 	useVisibleTask$(() => {
 		console.log('mounted');
 	});
-	return <>I'm a detail</>;
+	return <span style={{ marginLeft: '8px' }}>I'm a detail</span>;
 });

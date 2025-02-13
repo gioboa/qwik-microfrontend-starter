@@ -4,9 +4,10 @@
 	"description": "Vite + Module Federation is now possible",
 	"main": "index.js",
 	"scripts": {
-		"dev": "pnpm -r dev",
-		"preview": "pnpm -r preview",
-		"lint": "pnpm -r lint"
+		"dev": "pnpm --filter './apps/*' dev",
+		"preview": "pnpm --filter './apps/*' preview",
+		"lint": "pnpm --filter './apps/*' --filter './packages/*' lint",
+		"build.packages": "pnpm --filter './packages/*' build"
 	},
 	"author": {
 		"name": "Giorgio Boa",
@@ -21,8 +22,8 @@
 		}
 	],
 	"devDependencies": {
-		"@builder.io/qwik": "^1.9.0",
-		"@builder.io/qwik-city": "^1.9.0",
+		"@builder.io/qwik": "^1.12.0",
+		"@builder.io/qwik-city": "^1.12.0",
 		"@eslint/js": "^8.57.1",
 		"@types/eslint": "^8.56.12",
 		"@types/node": "^20.16.5",
@@ -31,7 +32,7 @@
 		"eslint": "^8.57.1",
 		"eslint-config-prettier": "^8.10.0",
 		"eslint-plugin-import": "^2.30.0",
-		"eslint-plugin-qwik": "^1.9.0",
+		"eslint-plugin-qwik": "^1.12.0",
 		"eslint-plugin-react": "^7.36.1",
 		"eslint-plugin-simple-import-sort": "^12.1.1",
 		"globals": "^15.9.0",

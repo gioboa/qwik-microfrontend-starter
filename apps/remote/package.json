@@ -25,5 +25,9 @@
 		"preview": "qwik build preview && vite preview --open --port 4174",
 		"start": "vite --open --mode ssr",
 		"qwik": "qwik"
+	},
+	"devDependencies": {
+		"@qwik-microfrontend/mfe": "workspace:^",
+		"@qwik-microfrontend/ui": "workspace:^"
 	}
 }
