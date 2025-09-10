@@ -1,5 +1,5 @@
-import type { StreamWriter } from '@builder.io/qwik';
-import { component$, SSRStream } from '@builder.io/qwik';
+import type { StreamWriter } from '@qwik.dev/core/internal';
+import { component$, SSRStream } from '@qwik.dev/core/internal';
 import { fixRemotePathsInDevMode } from '../utils';
 import type { FetchError, Props } from './RemoteMfe.types';
 

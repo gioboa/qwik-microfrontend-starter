@@ -1,4 +1,4 @@
-import { component$, useVisibleTask$ } from '@builder.io/qwik';
+import { component$, useVisibleTask$ } from '@qwik.dev/core';
 
 export const Detail = component$(() => {
 	// eslint-disable-next-line qwik/no-use-visible-task

@@ -1,5 +1,5 @@
-import { $, component$, useOnDocument, useStore } from '@builder.io/qwik';
-import type { DocumentHead } from '@builder.io/qwik-city';
+import { $, component$, useOnDocument, useStore } from '@qwik.dev/core';
+import type { DocumentHead } from '@qwik.dev/router';
 import { RemoteMfe } from '@qwik-microfrontend/mfe';
 import { Counter, type CounterStore } from '@qwik-microfrontend/ui';
 import remotes from '../../remotes.json';

@@ -1,4 +1,4 @@
-import { $, component$, useSignal, useStore } from '@builder.io/qwik';
+import { $, component$, useSignal, useStore } from '@qwik.dev/core';
 import { dispatchEvent } from '@qwik-microfrontend/mfe';
 import { Counter, type CounterStore } from '@qwik-microfrontend/ui';
 import { Detail } from '../components/Detail';

@@ -1,33 +1,33 @@
 {
-	"name": "remote",
-	"description": "App with Routing built-in ready to create your app",
-	"engines": {
-		"node": "^18.17.0 || ^20.3.0 || >=21.0.0"
-	},
-	"engines-annotation": "Mostly required by sharp which needs a Node-API v9 compatible runtime",
-	"private": true,
-	"trustedDependencies": [
-		"sharp"
-	],
-	"trustedDependencies-annotation": "Needed for bun to allow running install scripts",
-	"type": "module",
-	"scripts": {
-		"build": "qwik build",
-		"build.client": "vite build",
-		"build.preview": "vite build --ssr src/entry.preview.tsx",
-		"build.types": "tsc --incremental --noEmit",
-		"deploy": "echo 'Run \"npm run qwik add\" to install a server adapter'",
-		"dev": "vite --mode ssr --port 4174",
-		"dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
-		"fmt": "prettier --write .",
-		"fmt.check": "prettier --check .",
-		"lint": "eslint \"src/**/*.ts*\"",
-		"preview": "qwik build preview && vite preview --open --port 4174",
-		"start": "vite --open --mode ssr",
-		"qwik": "qwik"
-	},
-	"devDependencies": {
-		"@qwik-microfrontend/mfe": "workspace:^",
-		"@qwik-microfrontend/ui": "workspace:^"
-	}
+  "name": "remote",
+  "description": "App with Routing built-in ready to create your app",
+  "engines": {
+    "node": "^18.17.0 || ^20.3.0 || >=21.0.0"
+  },
+  "engines-annotation": "Mostly required by sharp which needs a Node-API v9 compatible runtime",
+  "private": true,
+  "trustedDependencies": [
+    "sharp"
+  ],
+  "trustedDependencies-annotation": "Needed for bun to allow running install scripts",
+  "type": "module",
+  "scripts": {
+    "build": "qwik build",
+    "build.client": "vite build",
+    "build.preview": "vite build --ssr src/entry.preview.tsx",
+    "build.types": "tsc --incremental --noEmit",
+    "deploy": "echo 'Run \"npm run qwik add\" to install a server adapter'",
+    "dev": "vite --mode ssr --port 4174",
+    "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
+    "fmt": "prettier --write .",
+    "fmt.check": "prettier --check .",
+    "lint": "eslint \"src/**/*.ts*\"",
+    "preview": "qwik build preview && vite preview --open --port 4174",
+    "start": "vite --open --mode ssr",
+    "qwik": "qwik"
+  },
+  "devDependencies": {
+    "@qwik-microfrontend/mfe": "workspace:^",
+    "@qwik-microfrontend/ui": "workspace:^"
+  }
 }
