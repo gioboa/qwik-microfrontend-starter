@@ -1,4 +1,4 @@
-import type { QRL } from "@builder.io/qwik";
+import type { QRL } from "@qwik.dev/core";
 
 export interface CounterProps {
   label: string;

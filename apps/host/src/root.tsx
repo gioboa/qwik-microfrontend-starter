@@ -1,5 +1,5 @@
-import { PrefetchGraph, PrefetchServiceWorker, component$ } from '@builder.io/qwik';
-import { QwikCityProvider, RouterOutlet } from '@builder.io/qwik-city';
+import { PrefetchGraph, PrefetchServiceWorker, component$ } from '@qwik.dev/core';
+import { QwikRouterProvider, RouterOutlet } from '@qwik.dev/router';
 import { RouterHead } from './components/router-head/router-head';
 
 import './global.css';
@@ -13,7 +13,7 @@ export default component$(() => {
 	 */
 
 	return (
-		<QwikCityProvider>
+		<QwikRouterProvider>
 			<head>
 				<meta charSet="utf-8" />
 				<link rel="manifest" href="/manifest.json" />
@@ -24,6 +24,6 @@ export default component$(() => {
 				<PrefetchGraph />
 				<PrefetchServiceWorker />
 			</body>
-		</QwikCityProvider>
+		</QwikRouterProvider>
 	);
 });

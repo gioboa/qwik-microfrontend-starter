@@ -1,5 +1,5 @@
-import { PrefetchGraph, component$ } from '@builder.io/qwik';
-import { QwikCityProvider, RouterOutlet } from '@builder.io/qwik-city';
+import { PrefetchGraph, component$ } from '@qwik.dev/core';
+import { QwikRouterProvider, RouterOutlet } from '@qwik.dev/router';
 
 import './global.css';
 
@@ -12,9 +12,9 @@ export default component$(() => {
 	 */
 
 	return (
-		<QwikCityProvider>
+		<QwikRouterProvider>
 			<RouterOutlet />
 			<PrefetchGraph base="/remote/build/" />
-		</QwikCityProvider>
+		</QwikRouterProvider>
 	);
 });
