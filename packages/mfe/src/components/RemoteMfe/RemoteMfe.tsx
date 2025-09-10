@@ -1,5 +1,5 @@
 import type { StreamWriter } from '@builder.io/qwik';
-import { component$, SSRStream, SSRStreamBlock } from '@builder.io/qwik';
+import { component$, SSRStream } from '@builder.io/qwik';
 import { fixRemotePathsInDevMode } from '../utils';
 import type { FetchError, Props } from './RemoteMfe.types';
 
@@ -52,9 +52,7 @@ export default component$(({ remote, removeLoader = true, ...rest }: Props) => {
 	return (
 		<div {...rest} q:shadowRoot>
 			<template shadowRootMode="open">
-				<SSRStreamBlock>
-					<SSRStream>{getSSRStreamFunction(url)}</SSRStream>
-				</SSRStreamBlock>
+				<SSRStream>{getSSRStreamFunction(url)}</SSRStream>
 			</template>
 		</div>
 	);
