@@ -13,7 +13,7 @@ export default component$(() => {
 	});
 
 	useOnDocument(
-		'APP_VALUE_CHANGED_EVENT',
+		'-APP_VALUE_CHANGED_EVENT',
 		$((event: CustomEvent<CustomEvent>) => {
 			counterState.counter += (event as CustomEvent).detail.qty;
 		}),

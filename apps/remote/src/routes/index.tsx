@@ -12,7 +12,7 @@ export default component$(() => {
 			this.counter++;
 		}),
 	});
-	const addCart = $(() => dispatchEvent('APP_VALUE_CHANGED_EVENT', 10));
+	const addCart = $(() => dispatchEvent('-APP_VALUE_CHANGED_EVENT', 10));
 
 	return (
 		<>
