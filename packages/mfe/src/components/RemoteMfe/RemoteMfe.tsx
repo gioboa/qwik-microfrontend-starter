@@ -1,5 +1,5 @@
 import type { StreamWriter } from '@qwik.dev/core/internal';
-import { component$, SSRStream } from '@qwik.dev/core/internal';
+import { component$, SSRRaw, SSRStream } from '@qwik.dev/core/internal';
 import { fixRemotePathsInDevMode } from '../utils';
 import type { FetchError, Props } from './RemoteMfe.types';
 
@@ -39,7 +39,7 @@ export default component$(({ remote, removeLoader = true, ...rest }: Props) => {
 						const rawHtml = decoder.decode(fragmentChunk.value);
 						const fixedHtmlObj = fixRemotePathsInDevMode(rawHtml, base);
 						base = fixedHtmlObj.base;
-						stream.write(fixedHtmlObj.html);
+						stream.write(<SSRRaw data={fixedHtmlObj.html} /> as string);
 						fragmentChunk = await reader.read();
 					}
 				} else {
