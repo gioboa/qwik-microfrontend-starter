@@ -1,6 +1,6 @@
 {
-  "remote": {
-    "name": "remote",
-    "url": "http://localhost:4174/remote/"
-  }
+	"remote": {
+		"name": "remote",
+		"url": "http://localhost:4174/remote/"
+	}
 }

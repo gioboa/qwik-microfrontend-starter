@@ -1,0 +1,50 @@
+{
+	"$schema": "./node_modules/oxlint/configuration_schema.json",
+	"plugins": ["eslint", "typescript", "oxc"],
+	"jsPlugins": ["eslint-plugin-qwik"],
+	"categories": {
+		"correctness": "error"
+	},
+	"env": {
+		"browser": true,
+		"es2021": true,
+		"node": true
+	},
+	"rules": {
+		"typescript/no-explicit-any": "off",
+		"typescript/no-inferrable-types": "off",
+		"typescript/no-non-null-assertion": "off",
+		"typescript/no-empty-interface": "off",
+		"typescript/no-namespace": "off",
+		"typescript/no-empty-function": "off",
+		"typescript/no-this-alias": "off",
+		"typescript/ban-ts-comment": "off",
+		"prefer-spread": "off",
+		"no-case-declarations": "off",
+		"no-console": "off",
+		"no-unused-vars": "error",
+		"typescript/consistent-type-imports": "warn",
+		"qwik/use-method-usage": "error",
+		"qwik/no-react-props": "error",
+		"qwik/prefer-classlist": "warn",
+		"qwik/jsx-no-script-url": "warn",
+		"qwik/loader-location": "warn",
+		"qwik/jsx-img": "warn",
+		"qwik/jsx-a": "warn",
+		"qwik/no-use-visible-task": "warn",
+		"qwik/jsx-key": "warn",
+		"qwik/unused-server": "error",
+		"qwik/serializer-signal-usage": "error",
+		"qwik/scope-use-task": "error"
+	},
+	"ignorePatterns": [
+		"**/dist/**",
+		"**/lib/**",
+		"**/lib-types/**",
+		"**/server/**",
+		"**/tmp/**",
+		"**/vite.config.ts",
+		"**/*.spec.ts",
+		"**/*.spec.tsx"
+	]
+}

@@ -1,0 +1,11 @@
+{
+	"$schema": "./node_modules/oxfmt/configuration_schema.json",
+	"printWidth": 140,
+	"singleQuote": true,
+	"useTabs": true,
+	"tabWidth": 2,
+	"semi": true,
+	"bracketSpacing": true,
+	"endOfLine": "lf",
+	"ignorePatterns": ["**/dist/**", "**/lib/**", "**/lib-types/**", "**/server/**", "**/tmp/**", "pnpm-lock.yaml", ".env*"],
+}

@@ -39,7 +39,7 @@ export default component$(({ remote, removeLoader = true, ...rest }: Props) => {
 						const rawHtml = decoder.decode(fragmentChunk.value);
 						const fixedHtmlObj = fixRemotePathsInDevMode(rawHtml, base);
 						base = fixedHtmlObj.base;
-						stream.write(<SSRRaw data={fixedHtmlObj.html} /> as string);
+						stream.write((<SSRRaw data={fixedHtmlObj.html} />) as string);
 						fragmentChunk = await reader.read();
 					}
 				} else {
