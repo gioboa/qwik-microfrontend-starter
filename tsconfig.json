@@ -14,6 +14,7 @@
 		"strict": true,
 		"verbatimModuleSyntax": true,
 		"moduleResolution": "bundler",
+		"allowImportingTsExtensions": true,
 		"baseUrl": ".",
 		"assumeChangesOnlyAffectDirectDependencies": true,
 		"noUnusedLocals": true,

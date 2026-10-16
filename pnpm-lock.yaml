@@ -9,11 +9,11 @@ importers:
   .:
     devDependencies:
       '@qwik.dev/core':
-        specifier: 2.0.0-rc.3
-        version: 2.0.0-rc.3(@oxc-project/types@0.144.0)(esbuild@0.28.2)(prettier@3.9.10)(rolldown@1.2.14)(rollup@4.64.7)(vite@8.3.4(@types/node@24.19.2)(esbuild@0.28.2)(yaml@2.9.1))
+        specifier: https://pkg.pr.new/QwikDev/qwik/@qwik.dev/core@9220
+        version: https://pkg.pr.new/QwikDev/qwik/@qwik.dev/core@9220(@oxc-project/types@0.154.0)(esbuild@0.28.2)(prettier@3.9.10)(rolldown@1.2.14)(rollup@4.64.7)(vite@8.3.4(@types/node@24.19.2)(esbuild@0.28.2)(yaml@2.9.1))
       '@qwik.dev/router':
-        specifier: 2.0.0-rc.3
-        version: 2.0.0-rc.3(@qwik.dev/core@2.0.0-rc.3(@oxc-project/types@0.144.0)(esbuild@0.28.2)(prettier@3.9.10)(rolldown@1.2.14)(rollup@4.64.7)(vite@8.3.4(@types/node@24.19.2)(esbuild@0.28.2)(yaml@2.9.1)))(rollup@4.64.7)(supports-color@7.2.0)(typescript@5.9.3)(vite@8.3.4(@types/node@24.19.2)(esbuild@0.28.2)(yaml@2.9.1))
+        specifier: https://pkg.pr.new/QwikDev/qwik/@qwik.dev/router@9220
+        version: https://pkg.pr.new/QwikDev/qwik/@qwik.dev/router@9220(@qwik.dev/core@https://pkg.pr.new/QwikDev/qwik/@qwik.dev/core@9220(@oxc-project/types@0.154.0)(esbuild@0.28.2)(prettier@3.9.10)(rolldown@1.2.14)(rollup@4.64.7)(vite@8.3.4(@types/node@24.19.2)(esbuild@0.28.2)(yaml@2.9.1)))(rollup@4.64.7)(supports-color@7.2.0)(typescript@5.9.3)(vite@8.3.4(@types/node@24.19.2)(esbuild@0.28.2)(yaml@2.9.1))
       '@types/node':
         specifier: ^24.3.1
         version: 24.19.2
@@ -970,8 +970,9 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@qwik.dev/core@2.0.0-rc.3':
-    resolution: {integrity: sha512-s87/I5hyQAPXzLg1ihKwoGzA5931uIYdqBzwR6tKUCixrH2fijLrLQSZgAQk1Z0wA5Cw4KsfHMNX8tzx/tNSkg==}
+  '@qwik.dev/core@https://pkg.pr.new/QwikDev/qwik/@qwik.dev/core@9220':
+    resolution: {integrity: sha512-37sSeNcr+UXILApK2o+/3+pW9hzk3xNkJBZZV75DPMDhV54spJUsOuUvv6KesrHy8DMBOMRWWtMFTHdXe1MHHQ==, tarball: https://pkg.pr.new/QwikDev/qwik/@qwik.dev/core@9220}
+    version: 2.0.0-rc.3
     engines: {node: ^20.3.0 || >=21.0.0}
     hasBin: true
     peerDependencies:
@@ -984,12 +985,14 @@ packages:
       vitest:
         optional: true
 
-  '@qwik.dev/optimizer@2.1.0-beta.9':
-    resolution: {integrity: sha512-PKZedb4+/Goi5KS7HCiJXZO9g3prbmI7lTi+yhy0GBPHUFlmRWVCXhllGrgRBHbvuPxfLTOAfZ5d/sG2QufTXQ==}
+  '@qwik.dev/optimizer@https://pkg.pr.new/QwikDev/qwik/@qwik.dev/optimizer@58073d2':
+    resolution: {integrity: sha512-iWzBQir8r9VSV+uISZf88BJq2Wqi/rY9nkvRv7U3Q+reQ25Bh0FWHtEyn0xwH1i042Tx7EnoQm54SS4e6UIYXQ==, tarball: https://pkg.pr.new/QwikDev/qwik/@qwik.dev/optimizer@58073d2}
+    version: 2.1.0-beta.9
     engines: {node: ^20.3.0 || >=21.0.0}
 
-  '@qwik.dev/router@2.0.0-rc.3':
-    resolution: {integrity: sha512-mVwtspzYrm0+FhO6JMiyICuvz7hGgRayZz31j5jy+tBIf9N+61NffGaez2MwV1SNr3TKXukLLob211zGhk6qAQ==}
+  '@qwik.dev/router@https://pkg.pr.new/QwikDev/qwik/@qwik.dev/router@9220':
+    resolution: {integrity: sha512-Ao2gok8OLPFlFBEoilTnQHDoOaulXi0EZzHXztzHLgbEZBuQexWOHTQKrUkPeB3wXOg+ksLDjl0rEIdmheRJAg==, tarball: https://pkg.pr.new/QwikDev/qwik/@qwik.dev/router@9220}
+    version: 2.0.0-rc.3
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
     peerDependencies:
       '@qwik.dev/core': 2.0.0-rc.3
@@ -2864,8 +2867,8 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
-  zod@3.25.48:
-    resolution: {integrity: sha512-0X1mz8FtgEIvaxGjdIImYpZEaZMrund9pGXm3M6vM7Reba0e2eI71KPjSCGXBfwKDPwPoywf6waUKc3/tFvX2Q==}
+  zod@4.6.7:
+    resolution: {integrity: sha512-g8W2D2kU6a8untc053fX1uVBKzM7yqAxW/3zwk83+6RyF2+SKOuV+c0wBDhUwzV1PaGapmZH+rmcUzPf+3CGwg==}
 
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
@@ -3417,18 +3420,18 @@ snapshots:
   '@oxlint/binding-win32-x64-msvc@1.88.0':
     optional: true
 
-  '@qwik.dev/core@2.0.0-rc.3(@oxc-project/types@0.144.0)(esbuild@0.28.2)(prettier@3.9.10)(rolldown@1.2.14)(rollup@4.64.7)(vite@8.3.4(@types/node@24.19.2)(esbuild@0.28.2)(yaml@2.9.1))':
+  '@qwik.dev/core@https://pkg.pr.new/QwikDev/qwik/@qwik.dev/core@9220(@oxc-project/types@0.154.0)(esbuild@0.28.2)(prettier@3.9.10)(rolldown@1.2.14)(rollup@4.64.7)(vite@8.3.4(@types/node@24.19.2)(esbuild@0.28.2)(yaml@2.9.1))':
     dependencies:
       '@emnapi/core': 1.11.3
       '@emnapi/runtime': 1.11.3
-      '@qwik.dev/optimizer': 2.1.0-beta.9
+      '@qwik.dev/optimizer': https://pkg.pr.new/QwikDev/qwik/@qwik.dev/optimizer@58073d2
       csstype: 3.2.3
       launch-editor: 2.14.2
       magic-regexp: 0.11.2(esbuild@0.28.2)(rolldown@1.2.14)(rollup@4.64.7)(vite@8.3.4(@types/node@24.19.2)(esbuild@0.28.2)(yaml@2.9.1))
       magic-string: 0.30.21
       oxc-parser: 0.144.0
       oxc-transform: 0.144.0
-      oxc-walker: 1.1.1(@oxc-project/types@0.144.0)(oxc-parser@0.144.0)(rolldown@1.2.14)
+      oxc-walker: 1.1.1(@oxc-project/types@0.154.0)(oxc-parser@0.144.0)(rolldown@1.2.14)
       pathe: 2.0.3
       siphash: 1.2.0
       vite: 8.3.4(@types/node@24.19.2)(esbuild@0.28.2)(yaml@2.9.1)
@@ -3446,14 +3449,14 @@ snapshots:
       - unloader
       - webpack
 
-  '@qwik.dev/optimizer@2.1.0-beta.9': {}
+  '@qwik.dev/optimizer@https://pkg.pr.new/QwikDev/qwik/@qwik.dev/optimizer@58073d2': {}
 
-  '@qwik.dev/router@2.0.0-rc.3(@qwik.dev/core@2.0.0-rc.3(@oxc-project/types@0.144.0)(esbuild@0.28.2)(prettier@3.9.10)(rolldown@1.2.14)(rollup@4.64.7)(vite@8.3.4(@types/node@24.19.2)(esbuild@0.28.2)(yaml@2.9.1)))(rollup@4.64.7)(supports-color@7.2.0)(typescript@5.9.3)(vite@8.3.4(@types/node@24.19.2)(esbuild@0.28.2)(yaml@2.9.1))':
+  '@qwik.dev/router@https://pkg.pr.new/QwikDev/qwik/@qwik.dev/router@9220(@qwik.dev/core@https://pkg.pr.new/QwikDev/qwik/@qwik.dev/core@9220(@oxc-project/types@0.154.0)(esbuild@0.28.2)(prettier@3.9.10)(rolldown@1.2.14)(rollup@4.64.7)(vite@8.3.4(@types/node@24.19.2)(esbuild@0.28.2)(yaml@2.9.1)))(rollup@4.64.7)(supports-color@7.2.0)(typescript@5.9.3)(vite@8.3.4(@types/node@24.19.2)(esbuild@0.28.2)(yaml@2.9.1))':
     dependencies:
       '@azure/functions': 3.5.1
       '@mdx-js/mdx': 3.1.1(supports-color@7.2.0)
       '@netlify/edge-functions': 3.0.8
-      '@qwik.dev/core': 2.0.0-rc.3(@oxc-project/types@0.144.0)(esbuild@0.28.2)(prettier@3.9.10)(rolldown@1.2.14)(rollup@4.64.7)(vite@8.3.4(@types/node@24.19.2)(esbuild@0.28.2)(yaml@2.9.1))
+      '@qwik.dev/core': https://pkg.pr.new/QwikDev/qwik/@qwik.dev/core@9220(@oxc-project/types@0.154.0)(esbuild@0.28.2)(prettier@3.9.10)(rolldown@1.2.14)(rollup@4.64.7)(vite@8.3.4(@types/node@24.19.2)(esbuild@0.28.2)(yaml@2.9.1))
       '@types/mdx': 2.0.14
       estree-util-value-to-estree: 3.5.0
       github-slugger: 2.0.0
@@ -3477,7 +3480,7 @@ snapshots:
       vite: 8.3.4(@types/node@24.19.2)(esbuild@0.28.2)(yaml@2.9.1)
       vite-imagetools: 10.0.0(rollup@4.64.7)(vite@8.3.4(@types/node@24.19.2)(esbuild@0.28.2)(yaml@2.9.1))
       yaml: 2.9.1
-      zod: 3.25.48
+      zod: 4.6.7
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -5228,9 +5231,9 @@ snapshots:
       '@oxc-transform/binding-win32-ia32-msvc': 0.144.0
       '@oxc-transform/binding-win32-x64-msvc': 0.144.0
 
-  oxc-walker@1.1.1(@oxc-project/types@0.144.0)(oxc-parser@0.144.0)(rolldown@1.2.14):
+  oxc-walker@1.1.1(@oxc-project/types@0.154.0)(oxc-parser@0.144.0)(rolldown@1.2.14):
     optionalDependencies:
-      '@oxc-project/types': 0.144.0
+      '@oxc-project/types': 0.154.0
       oxc-parser: 0.144.0
       rolldown: 1.2.14
 
@@ -5911,6 +5914,6 @@ snapshots:
 
   yocto-queue@0.1.0: {}
 
-  zod@3.25.48: {}
+  zod@4.6.7: {}
 
   zwitch@2.0.4: {}

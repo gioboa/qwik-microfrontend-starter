@@ -27,8 +27,8 @@
 		"prepare": "husky"
 	},
 	"devDependencies": {
-		"@qwik.dev/core": "2.0.0-rc.3",
-		"@qwik.dev/router": "2.0.0-rc.3",
+		"@qwik.dev/core": "https://pkg.pr.new/QwikDev/qwik/@qwik.dev/core@9220",
+		"@qwik.dev/router": "https://pkg.pr.new/QwikDev/qwik/@qwik.dev/router@9220",
 		"@types/node": "^24.3.1",
 		"eslint-plugin-qwik": "2.0.0-rc.3",
 		"globals": "^16.4.0",
