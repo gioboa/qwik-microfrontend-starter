@@ -16,8 +16,8 @@ type ErrorCause = {
 
 // any other fix for TS2339?
 export type FetchError = Error & {
-	cause: {
-		errors: ErrorCause[];
+	cause?: ErrorCause & {
+		errors?: ErrorCause[];
 		code: string;
-	}
+	};
 };

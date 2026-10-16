@@ -7,12 +7,12 @@ const handleFetchError = (error: FetchError) => {
 	// see https://web.dev/articles/fetch-api-error-handling
 
 	// Failed to fetch
-	if (error instanceof TypeError && error.cause.code === 'ECONNREFUSED') {
-		console.error('RemoteMfe is not available at address 0:', error.cause.errors[0].address, error.cause.errors[0].port); // IPv6
-
-		if (error.cause.errors[1]) {
-			console.error('RemoteMfe is not available at address 1:', error.cause.errors[1].address, error.cause.errors[1].port); // IPv4
-		}
+	if (error instanceof TypeError && error.cause?.code === 'ECONNREFUSED') {
+		// single address -> plain error, multiple addresses (IPv6 + IPv4) -> AggregateError with `errors`
+		const errors = error.cause.errors ?? [error.cause];
+		errors.forEach((e, i) => console.error(`RemoteMfe is not available at address ${i}:`, e.address, e.port));
+	} else {
+		console.error('RemoteMfe fetch failed:', error);
 	}
 };
 
