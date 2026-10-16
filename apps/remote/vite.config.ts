@@ -4,10 +4,8 @@
  */
 import { qwikRouter } from '@qwik.dev/router/vite';
 import { qwikVite } from '@qwik.dev/core/optimizer';
-import { existsSync, readFileSync } from 'node:fs';
 import { defineConfig, type UserConfig } from 'vite';
-import tsconfigPaths from 'vite-tsconfig-paths';
-import pkg from './package.json';
+import pkg from './package.json' with { type: 'json' };
 
 type PkgDep = Record<string, string>;
 const { dependencies = {}, devDependencies = {} } = pkg as any as {
@@ -20,15 +18,11 @@ errorOnDuplicatesPkgDeps(devDependencies, dependencies);
 /**
  * Note that Vite normally starts from `index.html` but the qwikCity plugin makes start at `src/entry.ssr.tsx` instead.
  */
-export default defineConfig(({ isSsrBuild }): UserConfig => {
-	const base = '/remote/';
-	// Qwik writes the client build to `dist${base}`, but the SSR build looks for the manifest in `dist/`
-	const clientManifestPath = `./dist${base}q-manifest.json`;
-	const manifestInput = isSsrBuild && existsSync(clientManifestPath) ? JSON.parse(readFileSync(clientManifestPath, 'utf-8')) : undefined;
-
+export default defineConfig((): UserConfig => {
 	return {
-		plugins: [qwikRouter(), qwikVite({ ssr: { manifestInput } }), tsconfigPaths()],
-		base,
+		plugins: [qwikRouter(), qwikVite()],
+		resolve: { tsconfigPaths: true },
+		base: '/remote/',
 		// This tells Vite which dependencies to pre-build in dev mode.
 		server: {
 			// listen on IPv4: the host's SSR fetch (Node) resolves `localhost` to 127.0.0.1

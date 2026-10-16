@@ -27,16 +27,8 @@ export default function (opts: RenderToStreamOptions) {
 			lang: 'en-us',
 			...opts.containerAttributes,
 		},
-		prefetchStrategy: {
-			implementation: {
-				linkInsert: null,
-				workerFetchInsert: null,
-				prefetchEvent: 'always',
-			},
-		},
 		containerTagName: 'div',
-		qwikLoader: {
-			include: url.searchParams.get('loader') ? 'never' : 'auto',
-		},
+		// the host already loads the Qwik Loader when embedding the remote (`?loader=false`)
+		qwikLoader: url.searchParams.get('loader') ? 'never' : 'module',
 	});
 }

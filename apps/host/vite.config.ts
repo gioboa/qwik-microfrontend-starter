@@ -5,9 +5,8 @@
 import { qwikRouter } from '@qwik.dev/router/vite';
 import { qwikVite } from '@qwik.dev/core/optimizer';
 import { defineConfig, type UserConfig } from 'vite';
-import tsconfigPaths from 'vite-tsconfig-paths';
-import pkg from './package.json';
-import remotes from './remotes.json';
+import pkg from './package.json' with { type: 'json' };
+import remotes from './remotes.json' with { type: 'json' };
 
 type PkgDep = Record<string, string>;
 const { dependencies = {}, devDependencies = {} } = pkg as any as {
@@ -34,7 +33,8 @@ export default defineConfig(({ command, mode }): UserConfig => {
 	);
 
 	return {
-		plugins: [qwikRouter(), qwikVite(), tsconfigPaths()],
+		plugins: [qwikRouter(), qwikVite()],
+		resolve: { tsconfigPaths: true },
 		// This tells Vite which dependencies to pre-build in dev mode.
 		optimizeDeps: {
 			// Put problematic deps that break bundling here, mostly those with binaries.
