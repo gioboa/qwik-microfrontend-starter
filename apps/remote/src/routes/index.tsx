@@ -1,5 +1,5 @@
 import { $, component$, useSignal, useStore } from '@qwik.dev/core';
-import { dispatchEvent } from '@qwik-microfrontend/mfe';
+import { dispatchEvent, MFE_EVENTS } from '@qwik-microfrontend/mfe';
 import { Counter, type CounterStore } from '@qwik-microfrontend/ui';
 import { Detail } from '../components/Detail';
 
@@ -12,7 +12,7 @@ export default component$(() => {
 			this.counter++;
 		}),
 	});
-	const addCart = $(() => dispatchEvent('-APP_VALUE_CHANGED_EVENT', 10));
+	const addCart = $(() => dispatchEvent(MFE_EVENTS.APP_VALUE_CHANGED, 10));
 
 	return (
 		<>

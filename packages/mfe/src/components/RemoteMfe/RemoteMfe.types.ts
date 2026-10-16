@@ -6,6 +6,8 @@ interface RemoteData {
 export interface Props {
 	remote: RemoteData;
 	removeLoader?: boolean;
+	/** Max time in ms to wait for the remote html (headers and body). Defaults to 5000 */
+	timeout?: number;
 	token?: string;
 }
 

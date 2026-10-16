@@ -1,4 +1,4 @@
-import { PrefetchGraph, PrefetchServiceWorker, component$ } from '@qwik.dev/core';
+import { component$ } from '@qwik.dev/core';
 import { QwikRouterProvider, RouterOutlet } from '@qwik.dev/router';
 import { RouterHead } from './components/router-head/router-head';
 
@@ -21,8 +21,6 @@ export default component$(() => {
 			</head>
 			<body lang="en">
 				<RouterOutlet />
-				<PrefetchGraph />
-				<PrefetchServiceWorker />
 			</body>
 		</QwikRouterProvider>
 	);

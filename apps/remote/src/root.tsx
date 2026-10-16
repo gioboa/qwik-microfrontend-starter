@@ -1,4 +1,4 @@
-import { PrefetchGraph, component$ } from '@qwik.dev/core';
+import { component$ } from '@qwik.dev/core';
 import { QwikRouterProvider, RouterOutlet } from '@qwik.dev/router';
 
 import './global.css';
@@ -14,7 +14,6 @@ export default component$(() => {
 	return (
 		<QwikRouterProvider>
 			<RouterOutlet />
-			<PrefetchGraph base="/remote/build/" />
 		</QwikRouterProvider>
 	);
 });

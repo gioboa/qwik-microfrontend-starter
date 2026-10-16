@@ -1,6 +1,6 @@
 import { $, component$, useOnDocument, useStore } from '@qwik.dev/core';
 import type { DocumentHead } from '@qwik.dev/router';
-import { RemoteMfe } from '@qwik-microfrontend/mfe';
+import { MFE_EVENTS, RemoteMfe } from '@qwik-microfrontend/mfe';
 import { Counter, type CounterStore } from '@qwik-microfrontend/ui';
 import remotes from '../../remotes.json';
 
@@ -13,7 +13,7 @@ export default component$(() => {
 	});
 
 	useOnDocument(
-		'-APP_VALUE_CHANGED_EVENT',
+		MFE_EVENTS.APP_VALUE_CHANGED,
 		$((event: CustomEvent<CustomEvent>) => {
 			counterState.counter += (event as CustomEvent).detail.qty;
 		}),
