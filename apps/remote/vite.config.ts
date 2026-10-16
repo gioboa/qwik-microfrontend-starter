@@ -4,6 +4,7 @@
  */
 import { qwikRouter } from '@qwik.dev/router/vite';
 import { qwikVite } from '@qwik.dev/core/optimizer';
+import { existsSync, readFileSync } from 'node:fs';
 import { defineConfig, type UserConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import pkg from './package.json';
@@ -19,18 +20,26 @@ errorOnDuplicatesPkgDeps(devDependencies, dependencies);
 /**
  * Note that Vite normally starts from `index.html` but the qwikCity plugin makes start at `src/entry.ssr.tsx` instead.
  */
-export default defineConfig((): UserConfig => {
+export default defineConfig(({ isSsrBuild }): UserConfig => {
+	const base = '/remote/';
+	// Qwik writes the client build to `dist${base}`, but the SSR build looks for the manifest in `dist/`
+	const clientManifestPath = `./dist${base}q-manifest.json`;
+	const manifestInput = isSsrBuild && existsSync(clientManifestPath) ? JSON.parse(readFileSync(clientManifestPath, 'utf-8')) : undefined;
+
 	return {
-		plugins: [qwikRouter(), qwikVite(), tsconfigPaths()],
-		base: '/remote/',
+		plugins: [qwikRouter(), qwikVite({ ssr: { manifestInput } }), tsconfigPaths()],
+		base,
 		// This tells Vite which dependencies to pre-build in dev mode.
 		server: {
+			// listen on IPv4: the host's SSR fetch (Node) resolves `localhost` to 127.0.0.1
+			host: '127.0.0.1',
 			headers: {
 				// Don't cache the server response in dev mode
 				'Cache-Control': 'public, max-age=0',
 			},
 		},
 		preview: {
+			host: '127.0.0.1',
 			headers: {
 				// Do cache the server response in preview (non-adapter production build)
 				'Cache-Control': 'public, max-age=600',
